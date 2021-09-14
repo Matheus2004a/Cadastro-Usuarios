@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@400;500;600&family=Roboto:wght@300;400;500&display=swap');
+
+*{
+    font-family: 'Roboto','Montserrat','Poppins', sans-serif;
+}
+
+form{
+    border-radius: 2px;
+    padding: 2%;
+    margin: 10% 25%;
+    box-shadow: -1px 0px 8px 0px lightgrey;
+}
+
+.title-form{
+    text-align: center;
+}
+
+.btn-form{
+    text-align: center;
+    margin: 2rem 0;
+}
+
+button{
+    width: 7rem;
+}
+
+button i{
+    margin: 0 5px;
+}
