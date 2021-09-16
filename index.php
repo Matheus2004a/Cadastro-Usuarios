@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +31,13 @@ session_start();
     <form action="cadastro.php" method="post">
         <h3 class="title-form">Cadastro de usuários</h3>
         <?php
-        if (isset($_SESSION['user-cadastrado'])) {
-            echo $_SESSION['user-cadastrado'] ;
-            unset($_SESSION['user-cadastrado'] );
-        }
-        else{
-            echo $_SESSION['user-nao-cadastrado'];
-        }
+            if (isset($_SESSION['user-cadastrado'])) {
+                echo $_SESSION['user-cadastrado'];
+                unset($_SESSION['user-cadastrado']);
+            }
+            else{
+                echo $_SESSION['user-descadastrado'];
+            }
         ?>
         <h6>Nome completo</h6>
         <div class="form-floating mb-3">
