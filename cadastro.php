@@ -10,7 +10,7 @@
             VALUES ('$nomeCompleto','$email','$senha')";
 
     if (mysqli_query($conn, $sql)) {
-        $_SESSION['user-cadastrado'] = "<div style='display:none;' class='alert alert-success d-flex align-items-center' role='alert'>
+        $_SESSION['user-cadastrado'] = "<div class='alert alert-success d-flex align-items-center' role='alert'>
             <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>
             <div>
             Usuário cadastrado com sucesso

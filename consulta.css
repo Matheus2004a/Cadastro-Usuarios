@@ -1,0 +1,9 @@
+.section-welcome{
+    margin: 10%;
+    background-color: #F0F8FF;
+    padding: 2rem;
+}
+
+.section-welcome a{
+    text-decoration: none;
+}

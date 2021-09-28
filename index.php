@@ -31,13 +31,12 @@
     <form action="cadastro.php" method="post">
         <h3 class="title-form">Cadastro de usuários</h3>
         <?php
-            if (isset($_SESSION['user-cadastrado'])) {
-                echo $_SESSION['user-cadastrado'];
-                unset($_SESSION['user-cadastrado']);
-            }
-            else{
-                echo $_SESSION['user-descadastrado'];
-            }
+        if (isset($_SESSION['user-cadastrado'])) {
+            echo $_SESSION['user-cadastrado'];
+            unset($_SESSION['user-cadastrado']);
+        } else {
+            echo $_SESSION['user-descadastrado'];
+        }
         ?>
         <h6>Nome completo</h6>
         <div class="form-floating mb-3">
@@ -60,6 +59,12 @@
         <div class="btn-form">
             <button type="submit" class="btn btn-success"><i class="fas fa-check"></i>Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
+        </div>
+
+        <div class="btn-form">
+            <a href="consulta.php">
+                <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
+            </a>
         </div>
     </form>
 
