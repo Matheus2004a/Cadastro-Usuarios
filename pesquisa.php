@@ -1,5 +1,5 @@
 <?php
-    include_once("conexão.php");
+    include_once("./connection/conexão.php");
 
     /* if (isset($_POST['busca-dados'])) {
         $buscarDados = $_POST['busca-dados'];
@@ -11,8 +11,8 @@
 
     if(mysqli_num_rows($dados) > 0){
         // Buscando todos os registros da tabela
-        while(mysqli_fetch_row($dados)){
-            echo "Nome Completo: " . $row['$nome_completo']. "<br>" . "Email: " . $row['email']. "<br>" . "Senha: " . $row['senha'] . "<hr>";
+        while($row = mysqli_fetch_assoc($dados)){
+            echo "Nome Completo: " . $row['nome_completo']. "<br>" . "Email: " . $row['email']. "<br>" . "Senha: " . $row['senha'] . "<hr>";
         }
     }
     else {

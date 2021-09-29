@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once("conexão.php");
+    include_once("./connection/conexão.php");
 
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -16,7 +16,7 @@
             Usuário cadastrado com sucesso
             </div>
             </div>";
-        header("location: index.php");
+        header("location: ./home/forms.php");
     } 
     else {
         $_SESSION['user-descadastrado'] = "<div class='alert alert-danger d-flex align-items-center' role='alert'>
@@ -28,7 +28,7 @@
             </div>
             </div>";
 
-        header("location: index.php");
+        header("location: ./home/forms.php");
     }
 
     mysqli_close($conn);

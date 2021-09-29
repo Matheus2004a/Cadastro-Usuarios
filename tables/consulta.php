@@ -26,7 +26,7 @@
     <div class="container">
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-                <form class="d-flex" action="pesquisa.php">
+                <form class="d-flex" action="../pesquisa.php">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search" name="busca-dados" required>
                     <button class="btn btn-outline-success" type="submit">Procurar</button>
                 </form>
@@ -64,7 +64,7 @@
             </tbody>
         </table>
 
-        <a href="consulta.php">
+        <a href="../index.php">
             <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
         </a>
     </div>
