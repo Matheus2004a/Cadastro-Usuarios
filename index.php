@@ -19,7 +19,7 @@
         <a href="./home/forms.php">
             <button type="submit" class="btn btn-primary">Cadastro</button>
         </a>
-        <a href="./tables/consulta.php">
+        <a href="./tables/pesquisa.php">
             <button type="search" class="btn btn-secondary">Pesquisar</button>
         </a>
     </section>

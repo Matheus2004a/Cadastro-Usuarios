@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once("./connection/conexão.php");
+    include_once("./connection/conexao.php");
 
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
