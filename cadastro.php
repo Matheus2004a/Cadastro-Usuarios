@@ -27,7 +27,6 @@
             Usuário já cadastrado
             </div>
             </div>";
-
         header("location: ./home/forms.php");
     }
 

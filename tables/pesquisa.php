@@ -41,7 +41,7 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <form class="d-flex" action="pesquisa.php" method="POST">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar usuário" aria-label="Search" name="busca">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar usuário" aria-label="Search" name="busca" required autofocus>
                     <button class="btn btn-outline-success" type="submit">Procurar</button>
                 </form>
             </div>
@@ -53,6 +53,7 @@
                     <th scope="col">Nome Completo</th>
                     <th scope="col">Email</th>
                     <th scope="col">Senha</th>
+                    <th scope="col">Funções</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,6 +69,10 @@
                                 <td>$nomeCompleto</td>
                                 <td>$email</td>
                                 <td>$senha</td>
+                                <td>
+                                    <a href='../editCadastro.php?nome=$nomeCompleto' class='btn btn-success btn-sm'>Editar</a>
+                                    <a href='' class='btn btn-danger btn-sm'>Excluir</a>
+                                </td>
                             </tr>";
                         }
                     } else {
