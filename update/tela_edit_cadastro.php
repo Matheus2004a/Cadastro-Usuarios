@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -9,30 +9,22 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alterações de cadastro no MySQL com PHP</title>
-    <link rel="stylesheet" href="./home/forms.css">
+    <title>Alteração de cadastro de usuários</title>
+    <link rel="stylesheet" href="../home/tela-cadastro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php
-        include_once("./connection/conexao.php");
+        include "../connection/conexao.php";
 
-        if (isset($nome)) {
-            $nome = $_GET['nomeCompleto'];
-        } 
-        else {
-            "";
-        }
-
+        $id = $_GET['id'] ?? '';
         // Fazendo uma nova requisição no bd
-        $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo = $nome";
+        $sql = "SELECT * FROM tbl_dadosuser WHERE id_user = $id";
 
-        $dadosRec = mysqli_query($conn, $sql);
+        $dados = mysqli_query($conn, $sql);
 
-        // Pegando os dados novamente
-        $datasRows = mysqli_fetch_assoc($dadosRec);
+        $dataRow = mysqli_fetch_assoc($dados);
     ?>
 
     <svg xmlns="http://www.w3.org/2000/svg">
@@ -47,49 +39,52 @@ session_start();
         </symbol>
     </svg>
 
-    <form action="cadastro.php" method="post">
-        <h3 class="title-form">Cadastro de usuários</h3>
+    <form action="edit_cadastro.php" method="POST">
+        <h3 class="title-form">Edição de cadastro de usuários</h3>
+    
         <?php
-        if (isset($_SESSION['user-cadastrado'])) {
-            echo $_SESSION['user-cadastrado'];
-            unset($_SESSION['user-cadastrado']);
-        } else {
-            echo $_SESSION['user-descadastrado'];
-        }
+            if (isset($_SESSION['user-cadastrado'])) {
+                echo $_SESSION['user-alterado'];
+                unset($_SESSION['user-alterado']);
+            }
+            else {
+                echo $_SESSION['user-não-alterado'];
+            }
         ?>
+
         <h6>Nome completo</h6>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $datasRows['nomeCompleto']; ?>">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $dataRow['nome_completo']; ?>">
             <label for="floatingInput">Digite seu nome completo</label>
         </div>
 
         <h6>Email</h6>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required value="<?php echo $datasRows['email']; ?>">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required value="<?php echo $dataRow['email']; ?>">
             <label for="floatingInput">Digite seu email</label>
         </div>
 
         <h6>Senha</h6>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="senha" required value="<?php echo $datasRows['senha']; ?>">
+            <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="senha" required value="<?php echo $dataRow['senha']; ?>">
             <label for="floatingInput">Digite sua senha</label>
         </div>
 
         <div class="btn-form">
-            <button type="submit" class="btn btn-success" value="Salvar alterações"><i class="fas fa-check"></i>Salvar alterações</button>
+            <button type="submit" class="btn btn-success"><i class="fas fa-check"></i>Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
+            <input type="hidden" name="id" value="<?php echo $dataRow['id_user']; ?>">
         </div>
 
-        <a href=""></a>
-
         <div class="btn-form">
-            <a href="./index.php">
-                <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i>Início</button>
+            <a href="../index.php">
+                <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
             </a>
         </div>
     </form>
 
     <script src="https://kit.fontawesome.com/798bcbaf05.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
 
 </html>

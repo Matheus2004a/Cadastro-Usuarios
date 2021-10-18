@@ -12,11 +12,7 @@
 
 <body>
     <?php
-    if (isset($_POST['busca'])) {
-        $pesquisa = $_POST['busca'];
-    } else {
-        $pesquisa = "";
-    }
+    $pesquisa = $_POST['busca'] ?? "";
 
     include_once("../connection/conexao.php");
 
@@ -61,6 +57,7 @@
                     if (mysqli_num_rows($dados) > 0) {
                         // Buscando todos os registros da tabela
                         while ($row = mysqli_fetch_assoc($dados)) {
+                            $idUser = $row['id_user'];
                             $nomeCompleto = $row['nome_completo'];
                             $email = $row['email'];
                             $senha = $row['senha'];
@@ -70,13 +67,13 @@
                                 <td>$email</td>
                                 <td>$senha</td>
                                 <td>
-                                    <a href='../editCadastro.php?nome=$nomeCompleto' class='btn btn-success btn-sm'>Editar</a>
+                                    <a href='../update/tela_edit_cadastro.php?id=$idUser' class='btn btn-success btn-sm'>Editar</a>
                                     <a href='' class='btn btn-danger btn-sm'>Excluir</a>
                                 </td>
                             </tr>";
                         }
                     } else {
-                        $_SESSION['dados-inexistente'] = "<div class='alert alert-warning d-flex align-items-center' role='alert'>
+                        echo "<div class='alert alert-warning d-flex align-items-center' role='alert'>
                         <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Warning:'><use xlink:href='#exclamation-triangle-fill'/></svg>
                         <div>
                         Dados não encontrados

@@ -16,7 +16,7 @@
         <p>Este é um sistema de cadastro web. Clique no botão "pesquisar" para localizar seus dados pessoais</p>
         <p>Acesse as funções clicando nos botões abaixo:</p>
 
-        <a href="./home/forms.php">
+        <a href="./home/tela_cadastro.php">
             <button type="submit" class="btn btn-primary">Cadastro</button>
         </a>
         <a href="./tables/pesquisa.php">
