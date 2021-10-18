@@ -18,10 +18,10 @@ session_start();
     <?php
         include_once("./connection/conexao.php");
         
-        $nome = $_GET['nomeCompleto'] ?? "";
+        $id = $_GET['id'] ?? "";
 
         // Fazendo uma nova requisição no bd
-        $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo = $nome";
+        $sql = "SELECT * FROM tbl_dadosuser WHERE id_user = $id";
 
         $dadosRec = mysqli_query($conn, $sql);
 
@@ -42,18 +42,11 @@ session_start();
     </svg>
 
     <form action="cadastro.php" method="post">
-        <h3 class="title-form">Cadastro de usuários</h3>
-        <?php
-        if (isset($_SESSION['user-cadastrado'])) {
-            echo $_SESSION['user-cadastrado'];
-            unset($_SESSION['user-cadastrado']);
-        } else {
-            echo $_SESSION['user-descadastrado'];
-        }
-        ?>
+        <h3 class="title-form">Edição de cadastro de usuários</h3>
+        
         <h6>Nome completo</h6>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $datasRows['nomeCompleto']; ?>">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $datasRows['nome_completo']; ?>">
             <label for="floatingInput">Digite seu nome completo</label>
         </div>
 

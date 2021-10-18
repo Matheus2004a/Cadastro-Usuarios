@@ -67,7 +67,7 @@
                                 <td>$email</td>
                                 <td>$senha</td>
                                 <td>
-                                    <a href='../cadastro_edit.php?nome=$nomeCompleto' class='btn btn-success btn-sm'>Editar</a>
+                                    <a href='../cadastro_edit.php?id=$idUser' class='btn btn-success btn-sm'>Editar</a>
                                     <a href='' class='btn btn-danger btn-sm'>Excluir</a>
                                 </td>
                             </tr>";
