@@ -41,7 +41,7 @@ session_start();
         </symbol>
     </svg>
 
-    <form action="cadastro.php" method="post">
+    <form action="update_cadastro.php" method="post">
         <h3 class="title-form">Edição de cadastro de usuários</h3>
         
         <h6>Nome completo</h6>
