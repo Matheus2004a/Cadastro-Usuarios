@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../connection/conexao.php";
+    include_once("../connection/conexao.php");
 
     $idUser = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
@@ -19,7 +19,7 @@
         header("location: tela_edit_cadastro.php");
     } 
     else {
-        $_SESSION['user-não-alterado'] = "<div class='alert alert-danger d-flex align-items-center' role='alert'>
+        $_SESSION['user-nao-alterado'] = "<div class='alert alert-danger d-flex align-items-center' role='alert'>
             <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Danger:'>
             <use xlink:href='#exclamation-triangle-fill' />
             </svg>

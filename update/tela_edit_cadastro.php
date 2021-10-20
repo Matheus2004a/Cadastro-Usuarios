@@ -43,12 +43,12 @@
         <h3 class="title-form">Edição de cadastro de usuários</h3>
     
         <?php
-            if (isset($_SESSION['user-cadastrado'])) {
+            if (isset($_SESSION['user-alterado'])) {
                 echo $_SESSION['user-alterado'];
                 unset($_SESSION['user-alterado']);
             }
             else {
-                echo $_SESSION['user-não-alterado'];
+                echo $_SESSION['user-nao-alterado'];
             }
         ?>
 
