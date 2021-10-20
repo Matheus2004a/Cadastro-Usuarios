@@ -24,7 +24,7 @@
             <use xlink:href='#exclamation-triangle-fill' />
             </svg>
             <div>
-            Usuário já cadastrado
+            Usuário já alterado
             </div>
             </div>";
             header("location: tela_edit_cadastro.php");
