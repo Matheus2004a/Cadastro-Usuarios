@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -68,7 +72,7 @@
                                 <td>$senha</td>
                                 <td>
                                     <a href='../update/tela_edit_cadastro.php?id=$idUser' class='btn btn-success btn-sm'>Editar</a>
-                                    <a href='' class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirm-delete-modal' onclick=" .'"' . "getDatas($idUser,'$nomeCompleto')".'"' .">Excluir</a>
+                                    <a href='' class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirm-delete-modal' onclick=" . '"' . "getDatas($idUser,'$nomeCompleto')" . '"' . ">Excluir</a>
                                 </td>
                             </tr>";
                     }
@@ -89,9 +93,17 @@
         <a href="../index.php">
             <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
         </a>
+
+        <?php
+        if (isset($_SESSION['user-deleted'])) {
+            echo $_SESSION['user-deleted'];
+            unset($_SESSION['user-deleted']);
+        } else {
+            echo $_SESSION['user-not-deleted'];
+        }
+        ?>
     </div>
 
-    <!-- Modal -->
     <div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -100,13 +112,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" method="post">
-                        <p>Deseja realmente excluir?</p>
-                        <p id="person-name"></p>
-
+                    <form action="../delete/delete_cadastro.php" method="post">
+                        <p>Deseja realmente excluir <b id="person-name"></b>?</p>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-                            <input type="text" name="id" id="cod-pessoa" value="">
+                            <input type="hidden" name="id" id="cod-pessoa" value="">
                             <button type="submit" class="btn btn-danger">Sim</button>
                         </div>
                     </form>
