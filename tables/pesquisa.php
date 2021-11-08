@@ -18,7 +18,7 @@ session_start();
     <?php
     $pesquisa = $_POST['busca'] ?? "";
 
-    include_once("../connection/conexao.php");
+    include "../connection/conexao.php";
 
     $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo LIKE '%$pesquisa%'";
 
