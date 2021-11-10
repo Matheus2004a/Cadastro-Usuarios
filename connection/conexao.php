@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "root";
-    $password = "Mapef@09112004a";
+    $password = "";
     $dbname = "bd_curso_tecnico";
 
     // Create connection
