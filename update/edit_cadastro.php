@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include "../connection/conexao.php";
+    include_once("../connection/conexao.php");
 
     $idUser = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_STRING);
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
