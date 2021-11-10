@@ -16,7 +16,7 @@
 
 <body>
     <?php
-        include "../connection/conexao.php";
+        include_once("../connection/conexao.php");
 
         $id = $_GET['id'] ?? '';
         // Fazendo uma nova requisição no bd
@@ -41,7 +41,6 @@
 
     <form action="edit_cadastro.php" method="POST">
         <h3 class="title-form">Edição de cadastro de usuários</h3>
-    
         <?php
             if (isset($_SESSION['user-alterado'])) {
                 echo $_SESSION['user-alterado'];
