@@ -16,7 +16,7 @@
 
 <body>
     <?php
-        include_once("../connection/conexao.php");
+        include_once("./connection/conexao.php");
 
         $id = $_GET['id'] ?? '';
         // Fazendo uma nova requisição no bd

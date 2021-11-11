@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,7 +18,7 @@
     <?php
     $pesquisa = $_POST['busca'] ?? "";
 
-    include_once("../connection/conexao.php");
+    include "../connection/conexao.php";
 
     $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo LIKE '%$pesquisa%'";
 
@@ -54,34 +58,34 @@
             </thead>
             <tbody>
                 <?php
-                    if (mysqli_num_rows($dados) > 0) {
-                        // Buscando todos os registros da tabela
-                        while ($row = mysqli_fetch_assoc($dados)) {
-                            $idUser = $row['id_user'];
-                            $nomeCompleto = $row['nome_completo'];
-                            $email = $row['email'];
-                            $senha = $row['senha'];
+                if (mysqli_num_rows($dados) > 0) {
+                    // Buscando todos os registros da tabela
+                    while ($row = mysqli_fetch_assoc($dados)) {
+                        $idUser = $row['id_user'];
+                        $nomeCompleto = $row['nome_completo'];
+                        $email = $row['email'];
+                        $senha = $row['senha'];
 
-                            echo "<tr>
+                        echo "<tr>
                                 <td>$nomeCompleto</td>
                                 <td>$email</td>
                                 <td>$senha</td>
                                 <td>
-                                    <a href='../cadastro_edit.php?id=$idUser' class='btn btn-success btn-sm'>Editar</a>
-                                    <a href='' class='btn btn-danger btn-sm'>Excluir</a>
+                                    <a href='../update/tela_edit_cadastro.php?id=$idUser' class='btn btn-success btn-sm'>Editar</a>
+                                    <a href='' class='btn btn-danger btn-sm' data-bs-toggle='modal' data-bs-target='#confirm-delete-modal' onclick=" . '"' . "getDatas($idUser,'$nomeCompleto')" . '"' . ">Excluir</a>
                                 </td>
                             </tr>";
-                        }
-                    } else {
-                        echo "<div class='alert alert-warning d-flex align-items-center' role='alert'>
+                    }
+                } else {
+                    echo "<div class='alert alert-warning d-flex align-items-center' role='alert'>
                         <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Warning:'><use xlink:href='#exclamation-triangle-fill'/></svg>
                         <div>
                         Dados não encontrados
                         </div>
                         </div>";
-                    }
+                }
 
-                    mysqli_close($conn);
+                mysqli_close($conn);
                 ?>
             </tbody>
         </table>
@@ -89,9 +93,47 @@
         <a href="../index.php">
             <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
         </a>
+
+        <?php
+        if (isset($_SESSION['user-deleted'])) {
+            echo $_SESSION['user-deleted'];
+            unset($_SESSION['user-deleted']);
+        } else {
+            echo $_SESSION['user-not-deleted'];
+        }
+        ?>
     </div>
 
+    <div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="../delete/delete_cadastro.php" method="post">
+                        <p>Deseja realmente excluir <b id="person-name"></b>?</p>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                            <input type="hidden" name="id" id="cod-pessoa" value="">
+                            <button type="submit" class="btn btn-danger">Sim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function getDatas(id, name) {
+            document.querySelector("#cod-pessoa").value = id
+            document.querySelector("#person-name").innerHTML = name
+        }
+    </script>
+
     <script src="https://kit.fontawesome.com/798bcbaf05.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
