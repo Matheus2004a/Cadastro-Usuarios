@@ -14,3 +14,25 @@ Ao fazer esse sistema pude compreender melhor sobre conceitos como:
 - Filtragem no campo de pesquisar usuários cadastrados.
 
 **Observação:** Estou com um problema de erro de chave array indefinida ao trabalhar com sessão no PHP, então caso alguém tenha uma sugestão de melhoria no código a ser feita ou até mesmo sobre questões de segurança, podem ficar à vontade para fazê - las. Este erro não é nada grave, apenas uma mensagem de alerta, pois o sistema está funcionando.💕😍
+
+# 
+## Sobre a conexão com o BD
+#
+```php
+<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "bd_curso_tecnico";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+        die("Conexão falhada: " . mysqli_connect_error());
+    }
+?>
+```
+**Substituições recomendadas a serem feitas nas seguintes variáveis:**
+- **$password:** Substitua pela sua senha configurada do seu próprio banco de dados.
+- **$dbname:** Substitua pelo nome do banco de dados que você criou.
