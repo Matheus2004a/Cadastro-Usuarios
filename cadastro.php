@@ -6,7 +6,7 @@
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-    $sql = "INSERT INTO `tbl_dadosuser`(`nome_completo`, `email`, `senha`) 
+    $sql = "INSERT INTO `tbl_dadosuser`(`id_user`, nome_completo`, `email`, `senha`) 
             VALUES ('$nomeCompleto','$email','$senha')";
 
     if (mysqli_query($conn, $sql)) {
