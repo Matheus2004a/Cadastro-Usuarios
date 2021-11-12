@@ -16,14 +16,12 @@
 
 <body>
     <?php
-        include_once("../connection/conexao.php");
+        require "../connection/conexao.php";
 
         $id = $_GET['id'] ?? '';
         // Fazendo uma nova requisição no bd
-        $sql = "SELECT * FROM tbl_dadosuser WHERE id_user = $id";
-
+        $sql = "SELECT * FROM tbl_dadosuser WHERE id_user = '$id'";
         $dados = mysqli_query($conn, $sql);
-
         $dataRow = mysqli_fetch_assoc($dados);
     ?>
 

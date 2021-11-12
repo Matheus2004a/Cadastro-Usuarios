@@ -16,12 +16,10 @@
 
 <body>
     <?php
+    require "../connection/conexao.php";
+
     $pesquisa = $_POST['busca'] ?? "";
-
-    include "../connection/conexao.php";
-
     $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo LIKE '%$pesquisa%'";
-
     $dados = mysqli_query($conn, $sql);
     ?>
 
@@ -38,7 +36,7 @@
     </svg>
 
     <div class="container">
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light" style="padding: 0.7rem 0;">
             <div class="container-fluid">
                 <form class="d-flex" action="pesquisa.php" method="POST">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar usuário" aria-label="Search" name="busca" required autofocus>
@@ -99,7 +97,7 @@
             echo $_SESSION['user-deleted'];
             unset($_SESSION['user-deleted']);
         } else {
-            echo $_SESSION['user-not-deleted'];
+            echo $_SESSION["user-not-deleted"];
         }
         ?>
     </div>
