@@ -16,7 +16,7 @@
 
 <body>
     <?php
-        require "../connection/conexao.php";
+        require __DIR__ . "/../connection/conexao.php";
 
         $id = $_GET['id'] ?? '';
         // Fazendo uma nova requisição no bd

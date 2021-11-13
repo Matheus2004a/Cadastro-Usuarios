@@ -1,12 +1,12 @@
 <?php
     session_start();
-    require "./connection/conexao.php";
+    require __DIR__ . "/../connection/conexao.php";
 
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-    $sql = "INSERT INTO `tbl_dadosuser`(`id_user`, nome_completo`, `email`, `senha`) 
+    $sql = "INSERT INTO `tbl_dadosuser`(`nome_completo`, `email`, `senha`) 
             VALUES ('$nomeCompleto','$email','$senha')";
 
     if (mysqli_query($conn, $sql)) {
@@ -16,7 +16,7 @@
             Usuário cadastrado com sucesso
             </div>
             </div>";
-        header("location: ./home/tela_cadastro.php");
+        header("location: tela_cadastro.php");
     } 
     else {
         $_SESSION['user-descadastrado'] = "<div class='alert alert-danger d-flex align-items-center' role='alert'>
@@ -27,7 +27,7 @@
             Usuário já cadastrado
             </div>
             </div>";
-            header("location: ./home/tela_cadastro.php");
+            header("location: tela_cadastro.php");
     }
 
     mysqli_close($conn);

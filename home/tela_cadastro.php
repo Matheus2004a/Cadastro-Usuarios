@@ -27,7 +27,7 @@ session_start();
         </symbol>
     </svg>
 
-    <form action="../cadastro.php" method="POST">
+    <form action="cadastro.php" method="POST">
         <h3 class="title-form">Cadastro de usuários</h3>
         <?php
         if (isset($_SESSION['user-cadastrado'])) {
