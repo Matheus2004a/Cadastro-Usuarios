@@ -1,9 +1,5 @@
 # Sistema de cadastro de usuários ⚙️🧑‍🤝‍🧑
 
-<div align="center">
-    <video src="video/Cadastro-Demonstração.mp4" width="500" height="900">
-</div>
-
 Este sistema trata - se de um crud completo, onde é possível os usuários realizar todas as suas operações básicas em uma base de dados relacionais, sendo elas:
 
 - **C (Create)**: Adicionar novos dados.
@@ -15,7 +11,12 @@ Ao fazer esse sistema pude compreender melhor sobre conceitos como:
 - Conexão com banco de dados.
 - Envio de dados via método GET como é feito no caso do usuário realizar a atualização de seus dados, uma vez que utilizamos deste recurso para obter o preenchimento automático dos campos do formulário de cadastro.
 - O funcionamento de instruções SQL dentro do PHP, a exibição dinâmica dos dados em tabelas e etc.
-- Filtragem no campo de pesquisar usuários cadastrados.
+- Por se tratar de um projeto simples ainda assim procurei utilizar algumas boas práticas com relação a incluição de arquivos importantes em outros.
+
+**Algumas das funcionalidades extras do sistema são:**
+
+- Filtragem no campo de pesquisar usuários cadastrados para achar os dados de um ou mais em específico. 
+- Limpar os campos do formulário de alteração dos dados após ter realizado essa ação.
 
 **Observação:** Estou com um problema de erro de chave array indefinida ao trabalhar com sessão no PHP, então caso alguém tenha uma sugestão de melhoria no código a ser feita ou até mesmo sobre questões de segurança, podem ficar à vontade para fazê - las. Este erro não é nada grave, apenas uma mensagem de alerta, pois o sistema está funcionando.💕😍
 
