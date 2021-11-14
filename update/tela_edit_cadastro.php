@@ -51,26 +51,26 @@
 
         <h6>Nome completo</h6>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $dataRow['nome_completo']; ?>">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nomeCompleto" required value="<?php echo $dataRow['nome_completo'] ?? ''; ?>">
             <label for="floatingInput">Digite seu nome completo</label>
         </div>
 
         <h6>Email</h6>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required value="<?php echo $dataRow['email']; ?>">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required value="<?php echo $dataRow['email'] ?? ''; ?>">
             <label for="floatingInput">Digite seu email</label>
         </div>
 
         <h6>Senha</h6>
         <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="senha" required value="<?php echo $dataRow['senha']; ?>">
+            <input type="password" class="form-control" id="floatingInput" placeholder="name@example.com" name="senha" required value="<?php echo $dataRow['senha'] ?? ''; ?>">
             <label for="floatingInput">Digite sua senha</label>
         </div>
 
         <div class="btn-form">
             <button type="submit" class="btn btn-success"><i class="fas fa-check"></i>Salvar</button>
             <button type="reset" class="btn btn-danger">Limpar</button>
-            <input type="hidden" name="id" value="<?php echo $dataRow['id_user']; ?>">
+            <input type="hidden" name="id" value="<?php echo $dataRow['id_user'] ?? ''; ?>">
         </div>
 
         <div class="btn-form">
