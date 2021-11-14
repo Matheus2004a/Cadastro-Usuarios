@@ -1,5 +1,9 @@
 # Sistema de cadastro de usuários ⚙️🧑‍🤝‍🧑
 
+<div align="center">
+    <video src="video/Cadastro-Demonstração.mp4" width="700px" height="600">
+</div>
+
 Este sistema trata - se de um crud completo, onde é possível os usuários realizar todas as suas operações básicas em uma base de dados relacionais, sendo elas:
 
 - **C (Create)**: Adicionar novos dados.
@@ -17,6 +21,7 @@ Este sistema trata - se de um crud completo, onde é possível os usuários real
 
 - Filtragem no campo de pesquisar usuários cadastrados para achar os dados de um ou mais em específico. 
 - Limpar os campos do formulário de alteração dos dados após ter realizado essa ação.
+- Não permitir cadastrar mais de um usuário que tenha o mesmo e-mail.
 
 **Observação:** Estou com um problema de erro de chave array indefinida ao trabalhar com sessão no PHP, então caso alguém tenha uma sugestão de melhoria no código a ser feita ou até mesmo sobre questões de segurança, podem ficar à vontade para fazê - las. Este erro não é nada grave, apenas uma mensagem de alerta, pois o sistema está funcionando.💕😍
 
