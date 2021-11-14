@@ -23,7 +23,7 @@ Este sistema trata - se de um crud completo, onde é possível os usuários real
 - Limpar os campos do formulário de alteração dos dados após ter realizado essa ação.
 - Não permitir cadastrar mais de um usuário que tenha o mesmo e-mail.
 
-**Observação:** Estou com um problema de erro de chave array indefinida ao trabalhar com sessão no PHP, então caso alguém tenha uma sugestão de melhoria no código a ser feita ou até mesmo sobre questões de segurança, podem ficar à vontade para fazê - las. Este erro não é nada grave, apenas uma mensagem de alerta, pois o sistema está funcionando.💕😍
+**Observação:** Estou com um problema de erro de chave array indefinida ao trabalhar com sessão no PHP, então caso alguém tenha uma sugestão de melhoria no código a ser feita ou até mesmo sobre questões de segurança, podem ficar à vontade para fazê - las. Este erro não é nada grave, apenas uma mensagem de alerta, pois o sistema está funcionando.💕😍 
 
 ## Sobre a conexão com o BD
 ```php
@@ -44,3 +44,5 @@ Este sistema trata - se de um crud completo, onde é possível os usuários real
 **Substituições recomendadas a serem feitas nas seguintes variáveis:**
 - **$password:** Substitua pela sua senha configurada do seu próprio banco de dados.
 - **$dbname:** Substitua pelo nome do banco de dados que você criou.
+
+Obviamente que por ser meu primeiro Crud ainda possui algumas vulnerabilidades contra SQL Injection e entre outras. Dessa maneira, conforme for avançando pretendo implementar uma segurança maior ao sistema em breve.
