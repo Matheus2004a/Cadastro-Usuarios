@@ -1,5 +1,9 @@
 # Sistema de cadastro de usuários ⚙️🧑‍🤝‍🧑
 
+<div align="center">
+    <video src="video/Cadastro-Demonstração.mp4" width="500" height="900">
+</div>
+
 Este sistema trata - se de um crud completo, onde é possível os usuários realizar todas as suas operações básicas em uma base de dados relacionais, sendo elas:
 
 - **C (Create)**: Adicionar novos dados.
@@ -21,7 +25,7 @@ Ao fazer esse sistema pude compreender melhor sobre conceitos como:
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "bd_curso_tecnico";
+    $dbname = "";
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
