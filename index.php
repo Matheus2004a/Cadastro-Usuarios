@@ -16,10 +16,10 @@
         <p>Este é um sistema de cadastro web. Clique no botão "pesquisar" para localizar seus dados pessoais</p>
         <p>Acesse as funções clicando nos botões abaixo:</p>
 
-        <a href="./home/tela_cadastro.php">
+        <a href="./screens/home/tela_cadastro.php">
             <button type="submit" class="btn btn-primary">Cadastro</button>
         </a>
-        <a href="./tables/pesquisa.php">
+        <a href="./screens/tables/pesquisa.php">
             <button type="search" class="btn btn-secondary">Pesquisar</button>
         </a>
     </section>
