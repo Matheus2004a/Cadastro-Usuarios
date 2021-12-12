@@ -1,7 +1,7 @@
 # Sistema de cadastro de usuários ⚙️🧑‍🤝‍🧑
 
 <div align="center">
-    <img src="video/Cadastro-Demonstração.gif">
+    <img src="video/Crud-Cadastro.gif">
 </div>
 
 Este sistema trata - se de um crud completo, onde é possível os usuários realizar todas as suas operações básicas em uma base de dados relacionais, sendo elas:
