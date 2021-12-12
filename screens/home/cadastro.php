@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require __DIR__ . "/../connection/conexao.php";
+    require __DIR__ . "/../../connection/conexao.php";
 
     $nomeCompleto = filter_input(INPUT_POST, 'nomeCompleto', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);

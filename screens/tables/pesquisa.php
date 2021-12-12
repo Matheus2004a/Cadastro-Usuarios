@@ -16,7 +16,7 @@ session_start();
 
 <body>
     <?php
-    require __DIR__ . "/../connection/conexao.php";
+    require __DIR__ . "/../../connection/conexao.php";
 
     $pesquisa = $_POST['busca'] ?? "";
     $sql = "SELECT * FROM tbl_dadosuser WHERE nome_completo LIKE '%$pesquisa%'";
