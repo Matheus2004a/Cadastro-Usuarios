@@ -88,7 +88,7 @@ session_start();
             </tbody>
         </table>
 
-        <a href="../index.php">
+        <a href="../../index.php">
             <button type="button" class="btn btn-primary"><i class="fas fa-chevron-left"></i></i>Início</button>
         </a>
 
