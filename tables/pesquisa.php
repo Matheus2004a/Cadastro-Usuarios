@@ -96,8 +96,9 @@ session_start();
         if (isset($_SESSION['user-deleted'])) {
             echo $_SESSION['user-deleted'];
             unset($_SESSION['user-deleted']);
-        } else {
+        } else if (isset($_SESSION['user-not-deleted'])) {
             echo $_SESSION["user-not-deleted"];
+            unset($_SESSION['user-not-deleted']);
         }
         ?>
     </div>

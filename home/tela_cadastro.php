@@ -33,8 +33,9 @@ session_start();
         if (isset($_SESSION['user-cadastrado'])) {
             echo $_SESSION['user-cadastrado'];
             unset($_SESSION['user-cadastrado']);
-        } else {
+        } else if (isset($_SESSION['user-descadastrado'])) {
             echo $_SESSION['user-descadastrado'];
+            unset($_SESSION['desuser-cadastrado']);
         }
         ?>
         <h6>Nome completo</h6>

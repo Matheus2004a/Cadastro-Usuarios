@@ -44,8 +44,9 @@
                 echo $_SESSION['user-alterado'];
                 unset($_SESSION['user-alterado']);
             }
-            else {
+            else if (isset($_SESSION['user-nao-alterado'])) {
                 echo $_SESSION['user-nao-alterado'];
+                unset($_SESSION['user-nao-alterado']);
             }
         ?>
 
